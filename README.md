@@ -1,4 +1,4 @@
-# 2019 Car rental voice assistant
+# 2020 Car rental voice assistant
 Project of application used to rent a cars via intelligent voice assistant
 
 ### Presentational layer
