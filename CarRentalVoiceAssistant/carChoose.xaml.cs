@@ -28,6 +28,19 @@ namespace CarRentalVoiceAssistant
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             this.NavigationService.Navigate(new rentDates());
+            Reservation reservation = Reservation.Instance;
+            reservation.Make = Make.Text;
+            reservation.Model = Model.Text;
+        }
+
+        private void Make_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            
+        }
+
+        private void Model_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }

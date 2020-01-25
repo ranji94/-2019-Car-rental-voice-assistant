@@ -84,6 +84,7 @@
     <Compile Include="carChoose.xaml.cs">
       <DependentUpon>carChoose.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Reservation.cs" />
     <Compile Include="Finish.xaml.cs">
       <DependentUpon>Finish.xaml</DependentUpon>
     </Compile>
