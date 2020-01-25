@@ -9,3 +9,8 @@ Entered data is filled to form object and validated. If all necessary data were 
 
 ### Speech processing
 Application using **Microsoft Speech Platform** library to listening to expected expressions during the whole process asynchronously. Expected expressions were mapped using Grammar class and are served conditionally by application to process entered data.
+
+### Installing needed libraries
+1. Install Microsoft Speech Platform 11 **Runtime**
+2. Install Microsoft Speech Platform 11 **SDK**
+3. Install MSSpeech_TTS_<LANGUAGE> nad MSSpeech_SR_<Language>
