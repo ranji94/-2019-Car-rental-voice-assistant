@@ -6,10 +6,20 @@
       xmlns:local="clr-namespace:CarRentalVoiceAssistant"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="carChoose">
+      Title="carChoose" Width="397.6" Height="322.4">
 
-    <Grid>
-        <Label Content="Wybierz pojazd" HorizontalAlignment="Left" Margin="231,111,0,0" VerticalAlignment="Top" Width="384" Height="104" FontSize="36"/>
-
+    <Grid Height="322.4" Width="397.6">
+        <Label Content="Wybierz pojazd który chcesz wypożyczyć:" HorizontalAlignment="Left" Margin="73,36,0,0" VerticalAlignment="Top" Width="264" Height="63" FontSize="14"/>
+        <ComboBox Name="Make" HorizontalAlignment="Left" Margin="103,99,0,0" VerticalAlignment="Top" Width="188">
+            <ComboBoxItem Content="Opel" IsSelected="True"/>
+            <ComboBoxItem Content="Audi"/>
+            <ComboBoxItem Content="BMW"/>
+        </ComboBox>
+        <ComboBox Name="Model" HorizontalAlignment="Left" Margin="103,153,0,0" VerticalAlignment="Top" Width="188">
+            <ComboBoxItem Content="Astra" IsSelected="True"/>
+            <ComboBoxItem Content="Corsa"/>
+            <ComboBoxItem Content="Vectra"/>
+        </ComboBox>
+        <Button Content="Dalej" HorizontalAlignment="Left" Margin="154,260,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
     </Grid>
 </Page>

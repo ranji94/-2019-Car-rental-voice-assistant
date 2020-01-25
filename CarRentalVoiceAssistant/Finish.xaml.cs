@@ -16,18 +16,23 @@ using System.Windows.Shapes;
 namespace CarRentalVoiceAssistant
 {
     /// <summary>
-    /// Logika interakcji dla klasy carChoose.xaml
+    /// Logika interakcji dla klasy Finish.xaml
     /// </summary>
-    public partial class carChoose : Page
+    public partial class Finish : Page
     {
-        public carChoose()
+        public Finish()
         {
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void RetryButton_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new rentDates());
+            this.NavigationService.Navigate(new welcomeScreen());
+        }
+
+        private void ExitButton_Click(object sender, RoutedEventArgs e)
+        {
+            System.Windows.Application.Current.Shutdown();
         }
     }
 }
