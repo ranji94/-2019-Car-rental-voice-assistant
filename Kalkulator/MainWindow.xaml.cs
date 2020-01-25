@@ -15,6 +15,9 @@ using System.Windows.Shapes;
 using Microsoft.Speech.Recognition;
 using Microsoft.Speech.Synthesis;
 using System.Globalization;
+using System.Data;
+using System.Data.SqlClient;
+using Kalkulator.SQL;
 
 
 namespace Kalkulator
@@ -24,6 +27,8 @@ namespace Kalkulator
     /// </summary>
     public partial class MainWindow : Window
     {
+        //public DataTable dt;
+        internal static MainWindow main;
         static bool speechOn = true;
         static SpeechSynthesizer pTTS = new SpeechSynthesizer();
         static SpeechRecognitionEngine pSRE;
@@ -31,7 +36,9 @@ namespace Kalkulator
         int liczba2;
         public MainWindow()
         {
+            main = this;
             InitializeComponent();
+            FillMarkaBox();
 
             try
             {
@@ -72,6 +79,32 @@ namespace Kalkulator
             {
                 Console.WriteLine(ex.Message);
                 Console.ReadLine();
+            }
+        }
+
+        public void FillMarkaBox()
+        {
+            try
+            {
+                string strConn = "Data Source=SUNNY;Database=Pojazdy;User Id=sa;Password=12345;";
+                SqlConnection sqlConnection = new SqlConnection(strConn);
+                SqlCommand sqlCommand = new SqlCommand("SELECT Pojazd.Marka FROM Pojazd WHERE Pojazd.Zajety = 0 GROUP BY Pojazd.Marka", sqlConnection);
+                sqlConnection.Open();
+
+                SqlDataAdapter adapter = new SqlDataAdapter(sqlCommand);
+                DataTable dt = new DataTable();
+
+                adapter.Fill(dt);
+                marka.ItemsSource = dt.DefaultView;
+                marka.DisplayMemberPath = dt.Columns["Marka"].ToString();
+                marka.SelectedValuePath = dt.Columns["Marka"].ToString(); ;
+
+                sqlCommand.Dispose();
+                sqlConnection.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("A handled exception just occurred: " + ex.Message, "Exception Sample", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
 
@@ -216,6 +249,35 @@ namespace Kalkulator
 
         private void Grid_Initialized(object sender, EventArgs e)
         {
+
+        }
+
+        private void OnSelectionChanged(object sender, EventArgs e)
+        {
+            main.model.Visibility = Visibility.Visible;
+            try
+            {
+                string strConn = "Data Source=SUNNY;Database=Pojazdy;User Id=sa;Password=12345;";
+                SqlConnection sqlConnection = new SqlConnection(strConn);
+                string nazwaMarki = marka.SelectedValue.ToString();
+                SqlCommand sqlCommand = new SqlCommand("SELECT Pojazd.Model FROM Pojazd WHERE Pojazd.Zajety = 0 AND Pojazd.Marka='" +nazwaMarki+ "' GROUP BY Pojazd.Model", sqlConnection);
+                sqlConnection.Open();
+
+                SqlDataAdapter adapter = new SqlDataAdapter(sqlCommand);
+                DataTable dt = new DataTable();
+
+                adapter.Fill(dt);
+                model.ItemsSource = dt.DefaultView;
+                model.DisplayMemberPath = dt.Columns["Model"].ToString();
+                model.SelectedValuePath = dt.Columns["Model"].ToString(); ;
+
+                sqlCommand.Dispose();
+                sqlConnection.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("A handled exception just occurred: " + ex.Message, "Exception Sample", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
 
         }
 

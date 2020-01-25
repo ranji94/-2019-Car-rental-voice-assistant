@@ -1,0 +1,16 @@
+C:\Users\adria\-2020-Car-rental-voice-assistant\Kalkulator\bin\x64\Debug\Kalkulator.exe.config
+C:\Users\adria\-2020-Car-rental-voice-assistant\Kalkulator\bin\x64\Debug\Kalkulator.exe
+C:\Users\adria\-2020-Car-rental-voice-assistant\Kalkulator\bin\x64\Debug\Kalkulator.pdb
+C:\Users\adria\-2020-Car-rental-voice-assistant\Kalkulator\bin\x64\Debug\Microsoft.Speech.dll
+C:\Users\adria\-2020-Car-rental-voice-assistant\Kalkulator\obj\x64\Debug\Kalkulator.csprojAssemblyReference.cache
+C:\Users\adria\-2020-Car-rental-voice-assistant\Kalkulator\obj\x64\Debug\MainWindow.g.cs
+C:\Users\adria\-2020-Car-rental-voice-assistant\Kalkulator\obj\x64\Debug\App.g.cs
+C:\Users\adria\-2020-Car-rental-voice-assistant\Kalkulator\obj\x64\Debug\Kalkulator_MarkupCompile.cache
+C:\Users\adria\-2020-Car-rental-voice-assistant\Kalkulator\obj\x64\Debug\Kalkulator_MarkupCompile.lref
+C:\Users\adria\-2020-Car-rental-voice-assistant\Kalkulator\obj\x64\Debug\MainWindow.baml
+C:\Users\adria\-2020-Car-rental-voice-assistant\Kalkulator\obj\x64\Debug\Kalkulator.g.resources
+C:\Users\adria\-2020-Car-rental-voice-assistant\Kalkulator\obj\x64\Debug\Kalkulator.Properties.Resources.resources
+C:\Users\adria\-2020-Car-rental-voice-assistant\Kalkulator\obj\x64\Debug\Kalkulator.csproj.GenerateResource.cache
+C:\Users\adria\-2020-Car-rental-voice-assistant\Kalkulator\obj\x64\Debug\Kalkulator.csproj.CopyComplete
+C:\Users\adria\-2020-Car-rental-voice-assistant\Kalkulator\obj\x64\Debug\Kalkulator.exe
+C:\Users\adria\-2020-Car-rental-voice-assistant\Kalkulator\obj\x64\Debug\Kalkulator.pdb

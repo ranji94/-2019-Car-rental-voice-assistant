@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Kalkulator"
         mc:Ignorable="d"
-        Title="Kalkulator" Height="352" Width="404.289">
+        Title="Kalkulator" Height="474.142" Width="404.289">
     <Grid Margin="0,0,40,0">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="0*"/>
@@ -31,6 +31,8 @@
         <Button Content="C" HorizontalAlignment="Left" Margin="113,199,0,0" VerticalAlignment="Top" Width="37" Height="33" Click="Button_Click_Clear" Grid.Column="2"/>
         <Label Name="Liczba1" Grid.ColumnSpan="3" Content="Liczba1&#xD;&#xA;" HorizontalAlignment="Left" Margin="42,65,0,0" VerticalAlignment="Top" Width="95"/>
         <Label Name="Liczba2" Content="Liczba2" Grid.Column="2" HorizontalAlignment="Left" Margin="66,65,0,0" VerticalAlignment="Top" Width="80"/>
+        <ComboBox x:Name="marka" Grid.ColumnSpan="3" HorizontalAlignment="Left" Margin="27,311,0,0" VerticalAlignment="Top" Width="130" SelectionChanged="OnSelectionChanged"/>
+        <ComboBox x:Name="model" Grid.ColumnSpan="3" HorizontalAlignment="Left" Margin="27,351,0,0" VerticalAlignment="Top" Width="130" Visibility="Hidden"/>
 
     </Grid>
 </Window>
