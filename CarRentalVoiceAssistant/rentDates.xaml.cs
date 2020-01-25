@@ -46,7 +46,7 @@ namespace CarRentalVoiceAssistant
             DateTime temp1, temp2;
             if (ToDate.SelectedDate != null) {
                 if(DateTime.TryParse(FromDate.Text, out temp1) && DateTime.TryParse(ToDate.Text, out temp2))
-                { 
+                {
                     Next.IsEnabled = true;
                 }
             }
@@ -60,6 +60,9 @@ namespace CarRentalVoiceAssistant
 
         private void Next_Click(object sender, RoutedEventArgs e)
         {
+            Reservation reservation = Reservation.Instance;
+            reservation.FromDate = FromDate.Text;
+            reservation.ToDate = ToDate.Text;
             this.NavigationService.Navigate(new personalData());
         }
     }

@@ -23,6 +23,13 @@ namespace CarRentalVoiceAssistant
         public Summary()
         {
             InitializeComponent();
+            Reservation reservation = Reservation.Instance;
+            Make.Content = reservation.Make;
+            Model.Content = reservation.Model;
+            PersonalName.Content = reservation.PersonalName;
+            Surname.Content = reservation.Surname;
+            FromDateSummary.Content = reservation.FromDate;
+            ToDateSummary.Content = reservation.ToDate;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

@@ -14,7 +14,7 @@
         <Label Name="Model" Content="Model" HorizontalAlignment="Left" Margin="203,63,0,0" VerticalAlignment="Top" Width="55"/>
         <Label Name="FromDateSummary" Content="Od" HorizontalAlignment="Left" Margin="93,94,0,0" VerticalAlignment="Top" Width="55"/>
         <Label Name="ToDateSummary" Content="Do" HorizontalAlignment="Left" Margin="203,94,0,0" VerticalAlignment="Top" Width="55"/>
-        <Label Name="Name" Content="Imię" HorizontalAlignment="Left" Margin="93,125,0,0" VerticalAlignment="Top" Width="55"/>
+        <Label Name="PersonalName" Content="Imię" HorizontalAlignment="Left" Margin="93,125,0,0" VerticalAlignment="Top" Width="55"/>
         <Label Name="Surname" Content="Nazwisko" HorizontalAlignment="Left" Margin="203,125,0,0" VerticalAlignment="Top" Width="75"/>
         <Label Name="Price" Content="Cena" HorizontalAlignment="Left" Margin="155,171,0,0" VerticalAlignment="Top" Width="55"/>
         <Button Content="Wstecz" HorizontalAlignment="Left" Margin="80,260,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>

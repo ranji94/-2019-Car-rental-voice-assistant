@@ -32,19 +32,22 @@ namespace CarRentalVoiceAssistant
 
         private void Next_Click(object sender, RoutedEventArgs e)
         {
+            Reservation reservation = Reservation.Instance;
+            reservation.PersonalName = PersonalName.Text;
+            reservation.Surname = PersonalSurname.Text;
             this.NavigationService.Navigate(new Summary());
         }
 
         private void PersonalName_TextChanged(object sender, TextChangedEventArgs e)
         {
-            if (PersonalSurname.Text != null) {
+            if (PersonalSurname.Text != "") {
                 Next.IsEnabled = true;
             }
         }
 
         private void PersonalSurname_TextChanged(object sender, TextChangedEventArgs e)
         {
-            if (PersonalName.Text != null)
+            if (PersonalName.Text != "")
             {
                 Next.IsEnabled = true;
             }
