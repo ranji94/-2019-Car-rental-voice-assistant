@@ -32,7 +32,8 @@ namespace CarRentalVoiceAssistant
         public MainWindow()
         {
             InitializeComponent();
-            Main.Content = new welcomeScreen();
+            Loaded += MyWindow_Loaded;
+
             try
             {
                 pTTS.SetOutputToDefaultAudioDevice();
@@ -74,8 +75,8 @@ namespace CarRentalVoiceAssistant
             }
         }
 
-        public void setPage(Object obj) {
-            Main.Content = obj;
+        private void MyWindow_Loaded(Object sender, RoutedEventArgs e) {
+            frame.NavigationService.Navigate(new welcomeScreen());
         }
 
         private void PSRE_SpeechRecognized(Object sender, SpeechRecognizedEventArgs e) {
