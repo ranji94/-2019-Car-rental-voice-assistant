@@ -27,7 +27,10 @@ namespace CarRentalVoiceAssistant
 
         private void RetryButton_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new welcomeScreen());
+            WelcomeScreen welcomeScreen = new WelcomeScreen();
+            this.NavigationService.Navigate(welcomeScreen);
+            Current current = Current.Instance;
+            current.Page = welcomeScreen;
         }
 
         private void ExitButton_Click(object sender, RoutedEventArgs e)

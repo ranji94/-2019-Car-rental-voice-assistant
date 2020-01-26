@@ -39,7 +39,10 @@ namespace CarRentalVoiceAssistant
 
         private void RentCar_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new Finish());
+            Finish newPage = new Finish();
+            this.NavigationService.Navigate(newPage);
+            Current current = Current.Instance;
+            current.Page = newPage;
         }
     }
 }

@@ -16,13 +16,14 @@ using System.Windows.Shapes;
 namespace CarRentalVoiceAssistant
 {
     /// <summary>
-    /// Logika interakcji dla klasy rentDates.xaml
+    /// Logika interakcji dla klasy RentDates.xaml
     /// </summary>
-    public partial class rentDates : Page
+    public partial class RentDates : Page
     {
-        public rentDates()
+        public RentDates()
         {
             InitializeComponent();
+            Assistant.LoadRentDatesRecognition();
         }
 
         private void Back_Click(object sender, RoutedEventArgs e)
@@ -59,7 +60,10 @@ namespace CarRentalVoiceAssistant
             Reservation reservation = Reservation.Instance;
             reservation.FromDate = FromDate.Text;
             reservation.ToDate = ToDate.Text;
-            this.NavigationService.Navigate(new personalData());
+            PersonalData personalData = new PersonalData();
+            this.NavigationService.Navigate(personalData);
+            Current current = Current.Instance;
+            current.Page = personalData;
         }
     }
 }
