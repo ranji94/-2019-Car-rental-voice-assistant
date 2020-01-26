@@ -33,6 +33,7 @@ namespace CarRentalVoiceAssistant
         private void ToDate_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
         {
             DateTime temp1, temp2;
+            FromDate.DisplayDateEnd = ToDate.SelectedDate;
             if (FromDate.SelectedDate != null) {
                 if (DateTime.TryParse(FromDate.Text, out temp1) && DateTime.TryParse(ToDate.Text, out temp2))
                 {
@@ -44,18 +45,13 @@ namespace CarRentalVoiceAssistant
         private void FromDate_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
         {
             DateTime temp1, temp2;
+            ToDate.DisplayDateStart = FromDate.SelectedDate;
             if (ToDate.SelectedDate != null) {
                 if(DateTime.TryParse(FromDate.Text, out temp1) && DateTime.TryParse(ToDate.Text, out temp2))
                 {
                     Next.IsEnabled = true;
                 }
             }
-        }
-
-        public static bool IsDateTime(string txtDate)
-        {
-            DateTime tempDate;
-            return DateTime.TryParse(txtDate, out tempDate);
         }
 
         private void Next_Click(object sender, RoutedEventArgs e)
