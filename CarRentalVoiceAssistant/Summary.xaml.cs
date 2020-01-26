@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using CarRentalVoiceAssistant.SQL;
 
 namespace CarRentalVoiceAssistant
 {
@@ -39,6 +40,10 @@ namespace CarRentalVoiceAssistant
 
         private void RentCar_Click(object sender, RoutedEventArgs e)
         {
+            Reservation reservation = Reservation.Instance;
+            //DAL.RentCar(reservation.ID);
+            String name = reservation.PersonalName + " " + reservation.Surname;
+            DAL.CreateReservation(reservation.ID, reservation.FromDate, reservation.ToDate, name);
             Finish newPage = new Finish();
             this.NavigationService.Navigate(newPage);
             Current current = Current.Instance;

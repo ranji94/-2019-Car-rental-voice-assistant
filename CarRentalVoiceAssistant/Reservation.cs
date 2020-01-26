@@ -47,6 +47,13 @@ namespace CarRentalVoiceAssistant
             set { surname = value; }
         }
 
+        private int _ID;
+        public int ID
+        {
+            get { return _ID; }
+            set { _ID = value; }
+        }
+
         public static Reservation Instance {
             get {
                 lock (padlock) {

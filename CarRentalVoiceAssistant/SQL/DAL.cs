@@ -13,7 +13,7 @@ namespace CarRentalVoiceAssistant.SQL
     {
         private static String strConn = "Data Source=SUNNY;Database=Pojazdy;User Id=sa;Password=12345;";
         // Get all available car makes
-        public static void GetMake()
+        public static String[] GetMake()
         {
             try
             {
@@ -21,18 +21,58 @@ namespace CarRentalVoiceAssistant.SQL
                 SqlCommand sqlCommand = new SqlCommand("SELECT Pojazd.Marka FROM Pojazd WHERE Pojazd.Zajety = 0 GROUP BY Pojazd.Marka", sqlConnection);
                 sqlConnection.Open();
                 SqlDataAdapter adapter = new SqlDataAdapter(sqlCommand);
+                DataTable dt = new DataTable();
+
+                adapter.Fill(dt);
+                String[] result = new string[dt.Rows.Count];
+                int i = 0;
+                foreach (DataRow dr in dt.Rows)
+                {
+                    result[i++] = dr[0].ToString();
+                }
 
                 sqlCommand.Dispose();
                 sqlConnection.Close();
+                return result;
             }
             catch (Exception ex)
             {
                 Console.WriteLine("Exception caught: {0}", ex);
+                return null;
+            }
+        }
+
+        public static String[] GetAllMake()
+        {
+            try
+            {
+                SqlConnection sqlConnection = new SqlConnection(strConn);
+                SqlCommand sqlCommand = new SqlCommand("SELECT Pojazd.Marka FROM Pojazd GROUP BY Pojazd.Marka", sqlConnection);
+                sqlConnection.Open();
+                SqlDataAdapter adapter = new SqlDataAdapter(sqlCommand);
+                DataTable dt = new DataTable();
+
+                adapter.Fill(dt);
+                String[] result = new string[dt.Rows.Count];
+                int i = 0;
+                foreach (DataRow dr in dt.Rows)
+                {
+                    result[i++] = dr[0].ToString();
+                }
+
+                sqlCommand.Dispose();
+                sqlConnection.Close();
+                return result;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Exception caught: {0}", ex);
+                return null;
             }
         }
 
         // Get all models available for specific make
-        public static void GetModel(string make)
+        public static String[] GetModel(string make)
         {
             try
             {
@@ -41,13 +81,54 @@ namespace CarRentalVoiceAssistant.SQL
                 sqlConnection.Open();
 
                 SqlDataAdapter adapter = new SqlDataAdapter(sqlCommand);
+                DataTable dt = new DataTable();
+
+                adapter.Fill(dt);
+                String[] result = new string[dt.Rows.Count];
+                int i = 0;
+                foreach (DataRow dr in dt.Rows)
+                {
+                    result[i++] = dr[0].ToString();
+                }
 
                 sqlCommand.Dispose();
                 sqlConnection.Close();
+                return result;
             }
             catch (Exception ex)
             {
                 Console.WriteLine("Exception caught: {0}", ex);
+                return null;
+            }
+        }
+
+        public static String[] GetAllModel()
+        {
+            try
+            {
+                SqlConnection sqlConnection = new SqlConnection(strConn);
+                SqlCommand sqlCommand = new SqlCommand("SELECT Pojazd.Model FROM Pojazd GROUP BY Pojazd.Model", sqlConnection);
+                sqlConnection.Open();
+
+                SqlDataAdapter adapter = new SqlDataAdapter(sqlCommand);
+                DataTable dt = new DataTable();
+
+                adapter.Fill(dt);
+                String[] result = new string[dt.Rows.Count];
+                int i = 0;
+                foreach (DataRow dr in dt.Rows)
+                {
+                    result[i++] = dr[0].ToString();
+                }
+
+                sqlCommand.Dispose();
+                sqlConnection.Close();
+                return result;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Exception caught: {0}", ex);
+                return null;
             }
         }
 
@@ -57,7 +138,7 @@ namespace CarRentalVoiceAssistant.SQL
             try
             {
                 SqlConnection sqlConnection = new SqlConnection(strConn);
-                SqlCommand sqlCommand = new SqlCommand("SET Pojazd.Zajety = 1 WHERE Pojazd.ID_Pojazd = " + id, sqlConnection);
+                SqlCommand sqlCommand = new SqlCommand("UPDATE Pojazd SET Pojazd.Zajety = 1 WHERE Pojazd.ID_Pojazd = " + id, sqlConnection);
                 sqlConnection.Open();
 
                 SqlDataAdapter adapter = new SqlDataAdapter(sqlCommand);
@@ -76,7 +157,7 @@ namespace CarRentalVoiceAssistant.SQL
             try
             {
                 SqlConnection sqlConnection = new SqlConnection(strConn);
-                SqlCommand sqlCommand = new SqlCommand("INSERT INTO Rezerwacja([ID_Pojazdu],[DataOd],[DataDo],[Nazwisko]) VALUES (" + id + ", '" + fromDate + "', '" + toDate + "', '" + surname + "') ", sqlConnection);
+                SqlCommand sqlCommand = new SqlCommand("INSERT INTO Rezerwacja([ID_Pojazdu],[DataOd],[DataDo],[Nazwisko]) VALUES (" + id + ", CONVERT(datetime,'" + fromDate + "',111), CONVERT(datetime,'" + toDate + "',111), '" + surname + "') ", sqlConnection);
                 sqlConnection.Open();
 
                 SqlDataAdapter adapter = new SqlDataAdapter(sqlCommand);
@@ -91,7 +172,7 @@ namespace CarRentalVoiceAssistant.SQL
         }
 
         // Get car ID or check if car is occupied
-        public static void GetCarID(String make, String model)
+        public static int GetCarID(String make, String model)
         {
             try
             {
@@ -100,12 +181,26 @@ namespace CarRentalVoiceAssistant.SQL
                 sqlConnection.Open();
 
                 SqlDataAdapter adapter = new SqlDataAdapter(sqlCommand);
+                DataTable dt = new DataTable();
+
+                adapter.Fill(dt);
                 sqlCommand.Dispose();
                 sqlConnection.Close();
+                int result = 0;
+                if (dt.Rows.Count > 0)
+                {
+                    foreach (DataRow dr in dt.Rows)
+                    {
+                        result = Convert.ToInt32( dr[0].ToString());
+                    }
+                    return result;
+                }
+                else return result;
             }
             catch (Exception ex)
             {
                 Console.WriteLine("Exception caught: {0}", ex);
+                return 0;
             }
         }
 

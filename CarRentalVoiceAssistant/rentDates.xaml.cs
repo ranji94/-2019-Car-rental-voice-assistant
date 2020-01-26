@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -58,8 +59,10 @@ namespace CarRentalVoiceAssistant
         private void Next_Click(object sender, RoutedEventArgs e)
         {
             Reservation reservation = Reservation.Instance;
-            reservation.FromDate = FromDate.Text;
-            reservation.ToDate = ToDate.Text;
+            DateTime dt = DateTime.ParseExact(FromDate.Text, "dd.MM.yyyy", CultureInfo.InvariantCulture);
+            reservation.FromDate = dt.ToString("yyyy/MM/dd", CultureInfo.InvariantCulture);
+            dt = DateTime.ParseExact(ToDate.Text, "dd.MM.yyyy", CultureInfo.InvariantCulture);
+            reservation.ToDate = dt.ToString("yyyy/MM/dd", CultureInfo.InvariantCulture);
             PersonalData personalData = new PersonalData();
             this.NavigationService.Navigate(personalData);
             Current current = Current.Instance;

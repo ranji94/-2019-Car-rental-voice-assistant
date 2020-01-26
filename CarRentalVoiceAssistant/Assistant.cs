@@ -8,6 +8,7 @@ using Microsoft.Speech.Recognition;
 using Microsoft.Speech.Synthesis;
 using System.Windows;
 using System.Windows.Controls;
+using CarRentalVoiceAssistant.SQL;
 
 namespace CarRentalVoiceAssistant
 {
@@ -72,8 +73,8 @@ namespace CarRentalVoiceAssistant
             Choices chCar = new Choices();
             Choices chMake = new Choices();
             Choices chModel = new Choices();
-            string[] make = new string[] { "Opel", "BMW", "Audi" };
-            string[] model = new string[] { "Astra", "Vectra", "Corsa" };
+            string[] make = DAL.GetAllMake();
+            string[] model = DAL.GetAllModel();
             string[] car = new string[] { "Pojazd", "Auto", "Samochód" };
             chChoose.Add("Wybierz");
             chCar.Add(car);
@@ -99,7 +100,7 @@ namespace CarRentalVoiceAssistant
             }
             catch (Exception ex)
             {
-                // Currently nothing
+                MessageBox.Show("A handled exception just occurred: " + ex.Message, "Exception Sample", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
 
@@ -111,7 +112,8 @@ namespace CarRentalVoiceAssistant
                 pSRE.RecognizeAsync(RecognizeMode.Multiple);
             }
             catch (Exception ex)
-            { 
+            {
+                MessageBox.Show("A handled exception just occurred: " + ex.Message, "Exception Sample", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
 
@@ -121,7 +123,8 @@ namespace CarRentalVoiceAssistant
                 RentDatesGrammar(gramarSystem);
                 pSRE.RecognizeAsync(RecognizeMode.Multiple);
             }
-            catch (Exception ex) { 
+            catch (Exception ex) {
+                MessageBox.Show("A handled exception just occurred: " + ex.Message, "Exception Sample", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
 
