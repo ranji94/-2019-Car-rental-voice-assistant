@@ -20,19 +20,24 @@ using System.Data;
 namespace CarRentalVoiceAssistant
 {
     /// <summary>
-    /// Logika interakcji dla klasy carChoose.xaml
+    /// Logika interakcji dla klasy CarChoose.xaml
     /// </summary>
-    public partial class carChoose : Page
+    public partial class CarChoose : Page
     {
-        public carChoose()
+        public CarChoose()
         {
             InitializeComponent();
+            Assistant.LoadChooseCarRecognition();
             // FillMakeBox();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new rentDates());
+            RentDates newPage = new RentDates();
+            Current current = Current.Instance;
+            this.NavigationService.Navigate(newPage);
+            current.Page = newPage;
+
             Reservation reservation = Reservation.Instance;
             reservation.Make = Make.Text;
             reservation.Model = Model.Text;

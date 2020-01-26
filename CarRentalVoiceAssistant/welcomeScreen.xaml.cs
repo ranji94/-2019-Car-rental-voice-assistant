@@ -16,18 +16,24 @@ using System.Windows.Shapes;
 namespace CarRentalVoiceAssistant
 {
     /// <summary>
-    /// Logika interakcji dla klasy welcomeScreen.xaml
+    /// Logika interakcji dla klasy WelcomeScreen.xaml
     /// </summary>
-    public partial class welcomeScreen : Page
+    public partial class WelcomeScreen : Page
     {
-        public welcomeScreen()
+        public WelcomeScreen()
         {
+            Current current = Current.Instance;
+            current.Page = this;
             InitializeComponent();
+            Assistant.LoadRentACarRecognition();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new carChoose());
+            CarChoose carChoose = new CarChoose();
+            Current current = Current.Instance;
+            current.Page = carChoose;
+            this.NavigationService.Navigate(current.Page);
         }
     }
 }

@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace CarRentalVoiceAssistant
 {
     /// <summary>
-    /// Logika interakcji dla klasy Page1.xaml
+    /// Logika interakcji dla klasy PersonalData.xaml
     /// </summary>
-    public partial class personalData : Page
+    public partial class PersonalData : Page
     {
-        public personalData()
+        public PersonalData()
         {
             InitializeComponent();
         }
@@ -35,7 +35,11 @@ namespace CarRentalVoiceAssistant
             Reservation reservation = Reservation.Instance;
             reservation.PersonalName = PersonalName.Text;
             reservation.Surname = PersonalSurname.Text;
-            this.NavigationService.Navigate(new Summary());
+
+            Summary newPage = new Summary();
+            this.NavigationService.Navigate(newPage);
+            Current current = Current.Instance;
+            current.Page = newPage;
         }
 
         private void PersonalName_TextChanged(object sender, TextChangedEventArgs e)
