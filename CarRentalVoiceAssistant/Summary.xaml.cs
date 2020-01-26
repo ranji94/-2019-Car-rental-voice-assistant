@@ -41,7 +41,7 @@ namespace CarRentalVoiceAssistant
         private void RentCar_Click(object sender, RoutedEventArgs e)
         {
             Reservation reservation = Reservation.Instance;
-            //DAL.RentCar(reservation.ID);
+            DAL.RentCar(reservation.ID);
             String name = reservation.PersonalName + " " + reservation.Surname;
             DAL.CreateReservation(reservation.ID, reservation.FromDate, reservation.ToDate, name);
             Finish newPage = new Finish();

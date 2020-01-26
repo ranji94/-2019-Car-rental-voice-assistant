@@ -56,6 +56,7 @@ namespace CarRentalVoiceAssistant
             Model.Visibility = Visibility.Visible;
             String whatever = Make.SelectedItem.ToString();
             String[] paczka = DAL.GetModel(whatever);
+            Model.Items.Clear();
             foreach (String str in paczka)
             {
                 Model.Items.Add(str);

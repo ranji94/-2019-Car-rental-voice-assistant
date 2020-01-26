@@ -141,7 +141,7 @@ namespace CarRentalVoiceAssistant.SQL
                 SqlCommand sqlCommand = new SqlCommand("UPDATE Pojazd SET Pojazd.Zajety = 1 WHERE Pojazd.ID_Pojazd = " + id, sqlConnection);
                 sqlConnection.Open();
 
-                SqlDataAdapter adapter = new SqlDataAdapter(sqlCommand);
+                sqlCommand.ExecuteNonQuery();
 
                 sqlCommand.Dispose();
                 sqlConnection.Close();
@@ -157,10 +157,11 @@ namespace CarRentalVoiceAssistant.SQL
             try
             {
                 SqlConnection sqlConnection = new SqlConnection(strConn);
-                SqlCommand sqlCommand = new SqlCommand("INSERT INTO Rezerwacja([ID_Pojazdu],[DataOd],[DataDo],[Nazwisko]) VALUES (" + id + ", CONVERT(datetime,'" + fromDate + "',111), CONVERT(datetime,'" + toDate + "',111), '" + surname + "') ", sqlConnection);
+                String command = "INSERT INTO Rezerwacja([ID_Pojazdu],[DataOd],[DataDo],[Nazwisko]) VALUES (" + id + ", CONVERT(datetime,'" + fromDate + "',111), CONVERT(datetime,'" + toDate + "',111), '" + surname + "') ";
+                SqlCommand sqlCommand = new SqlCommand(command, sqlConnection);
                 sqlConnection.Open();
 
-                SqlDataAdapter adapter = new SqlDataAdapter(sqlCommand);
+                sqlCommand.ExecuteNonQuery();
 
                 sqlCommand.Dispose();
                 sqlConnection.Close();
