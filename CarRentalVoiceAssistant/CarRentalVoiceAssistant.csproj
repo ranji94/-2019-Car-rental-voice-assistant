@@ -94,6 +94,7 @@
     <Compile Include="rentDates.xaml.cs">
       <DependentUpon>rentDates.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SQL\DAL.cs" />
     <Compile Include="Summary.xaml.cs">
       <DependentUpon>Summary.xaml</DependentUpon>
     </Compile>
