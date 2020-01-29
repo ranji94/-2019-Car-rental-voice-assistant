@@ -15,7 +15,7 @@
         <Label Content="Od&#xD;&#xA;" HorizontalAlignment="Left" Margin="45,80,0,0" VerticalAlignment="Top" Width="35" Height="23"/>
         <Label Content="Do&#xD;&#xA;&#xA;" HorizontalAlignment="Left" Margin="45,142,0,0" VerticalAlignment="Top" Width="35" Height="23"/>
         <Button Name="Next" IsEnabled="False" Content="Dalej&#xD;&#xA;" HorizontalAlignment="Left" Margin="137,256,0,0" VerticalAlignment="Top" Width="75" Height="19" Click="Next_Click"/>
-        <Label Name="Message" Content="Komunikat" HorizontalAlignment="Left" Margin="45,204,0,0" VerticalAlignment="Top" Width="258" Visibility="Hidden"/>
+        <Label Name="Message" Content="Komunikat" HorizontalAlignment="Left" Margin="45,204,0,0" VerticalAlignment="Top" Width="306" Visibility="Hidden"/>
 
     </Grid>
 </Page>

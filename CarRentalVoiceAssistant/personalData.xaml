@@ -14,7 +14,7 @@
         <Label Content="Imię" HorizontalAlignment="Left" Margin="105,50,0,0" VerticalAlignment="Top" Width="195"/>
         <Label Content="Nazwisko" HorizontalAlignment="Left" Margin="105,110,0,0" VerticalAlignment="Top" Width="195"/>
         <Button Name="Next" IsEnabled="False" Content="Dalej" HorizontalAlignment="Left" Margin="155,244,0,0" VerticalAlignment="Top" Width="75" Click="Next_Click"/>
-        <Label Name="Message" Content="Komunikat" HorizontalAlignment="Left" Margin="155,197,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+        <Label Name="Message" Content="Komunikat" HorizontalAlignment="Left" Margin="105,197,0,0" VerticalAlignment="Top" Width="195" Visibility="Hidden"/>
 
     </Grid>
 </Page>

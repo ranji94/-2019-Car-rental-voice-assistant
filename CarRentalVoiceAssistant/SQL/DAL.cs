@@ -205,22 +205,36 @@ namespace CarRentalVoiceAssistant.SQL
             }
         }
 
-        public static void GetCarPrice(int ID)
+        public static decimal GetCarPrice(int ID)
         {
             try
             {
                 SqlConnection sqlConnection = new SqlConnection(strConn);
-                SqlCommand sqlCommand = new SqlCommand("SELECT Pojazd.Cena FROM Pojazd WHERE Pojazd.ID_Pojazdu=" + ID, sqlConnection);
+                SqlCommand sqlCommand = new SqlCommand("SELECT Pojazd.Cena FROM Pojazd WHERE Pojazd.ID_Pojazd=" + ID, sqlConnection);
                 sqlConnection.Open();
 
                 SqlDataAdapter adapter = new SqlDataAdapter(sqlCommand);
+                DataTable dt = new DataTable();
+
+                adapter.Fill(dt);
                 sqlCommand.Dispose();
                 sqlConnection.Close();
+                decimal result = 0;
+                if (dt.Rows.Count > 0)
+                {
+                    foreach (DataRow dr in dt.Rows)
+                    {
+                        result = Convert.ToDecimal(dr[0].ToString());
+                    }
+                    return result;
+                }
+                else return result;
             }
             catch (Exception ex)
             {
                 Console.WriteLine("Exception caught: {0}", ex);
+                return 0;
             }
         }
     }
-}
+ }

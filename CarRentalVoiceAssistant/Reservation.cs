@@ -31,10 +31,16 @@ namespace CarRentalVoiceAssistant
             get { return toDate; }
             set { toDate = value; }
         }
-        private String price;
-        public String Price {
+        private decimal price;
+        public decimal Price {
             get { return price; }
             set { price = value; }
+        }
+        private decimal payment;
+        public decimal Payment
+        {
+            get { return payment; }
+            set { payment = value; }
         }
         private String personalName;
         public String PersonalName {

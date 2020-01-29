@@ -13,12 +13,13 @@
         <Label Name="Make" Content="Marka" HorizontalAlignment="Left" Margin="93,63,0,0" VerticalAlignment="Top" Width="55"/>
         <Label Name="Model" Content="Model" HorizontalAlignment="Left" Margin="203,63,0,0" VerticalAlignment="Top" Width="55"/>
         <Label Name="FromDateSummary" Content="Od" HorizontalAlignment="Left" Margin="93,94,0,0" VerticalAlignment="Top" Width="55"/>
-        <Label Name="ToDateSummary" Content="Do" HorizontalAlignment="Left" Margin="203,94,0,0" VerticalAlignment="Top" Width="55"/>
+        <Label Name="ToDateSummary" Content="Do" HorizontalAlignment="Left" Margin="203,94,0,0" VerticalAlignment="Top" Width="98"/>
         <Label Name="PersonalName" Content="Imię" HorizontalAlignment="Left" Margin="93,125,0,0" VerticalAlignment="Top" Width="55"/>
         <Label Name="Surname" Content="Nazwisko" HorizontalAlignment="Left" Margin="203,125,0,0" VerticalAlignment="Top" Width="75"/>
-        <Label Name="Price" Content="Cena" HorizontalAlignment="Left" Margin="155,171,0,0" VerticalAlignment="Top" Width="55"/>
+        <Label Name="Payment" Content="Cena" HorizontalAlignment="Left" Margin="111,196,0,0" VerticalAlignment="Top" Width="134"/>
         <Button Name="RentCar" Content="Wynajem" HorizontalAlignment="Left" Margin="155,262,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.53,0.298" Click="RentCar_Click"/>
         <Label Name="Message" Content="Komunikat" HorizontalAlignment="Left" Margin="80,214,0,0" VerticalAlignment="Top" Width="198" Visibility="Hidden"/>
+        <Label Name ="Price" Content="Price" HorizontalAlignment="Left" Height="29" Margin="111,156,0,0" VerticalAlignment="Top" Width="119"/>
 
     </Grid>
 </Page>

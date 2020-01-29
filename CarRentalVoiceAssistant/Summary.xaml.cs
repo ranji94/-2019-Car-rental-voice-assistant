@@ -32,6 +32,17 @@ namespace CarRentalVoiceAssistant
             Surname.Content = reservation.Surname;
             FromDateSummary.Content = reservation.FromDate;
             ToDateSummary.Content = reservation.ToDate;
+            String date = reservation.FromDate;
+            DateTime fromDate = DateTime.Parse(date);
+            date = reservation.ToDate;
+            DateTime toDate = DateTime.Parse(date);
+            TimeSpan expected = toDate - fromDate;
+            decimal price = reservation.Price;
+            decimal days = expected.Days;
+            decimal paym = price * days;
+            Price.Content = "Koszt za dobę: " + price + " zł";
+            Payment.Content ="Koszt: "+ paym+" zł";
+            reservation.Payment = paym;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

@@ -36,7 +36,7 @@ namespace CarRentalVoiceAssistant
             int carid = DAL.GetCarID(Make.Text, Model.Text);
             if (carid == 0)
             {
-                MessageBox.Show(" Przykor nam. Wybrany samochód nie znajduje się w ofercie lub wszystkie są obecnie zajęte.");
+                MessageBox.Show(" Przykro nam. Wybrany samochód nie znajduje się w ofercie lub wszystkie są obecnie zajęte.");
             }
             else {
                 RentDates newPage = new RentDates();
@@ -48,6 +48,7 @@ namespace CarRentalVoiceAssistant
                 reservation.Make = Make.Text;
                 reservation.Model = Model.Text;
                 reservation.ID = carid;
+                reservation.Price = DAL.GetCarPrice(carid);
             }
         }
 

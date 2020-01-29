@@ -15,6 +15,6 @@
         <ComboBox Name="Model" HorizontalAlignment="Left" Margin="103,153,0,0" VerticalAlignment="Top" Width="188" SelectionChanged="Model_SelectionChanged" Visibility="Hidden">
         </ComboBox>
         <Button Content="Dalej" HorizontalAlignment="Left" Margin="154,260,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
-        <Label Name="Message" Content="Komunikat: " HorizontalAlignment="Left" Margin="166,209,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+        <Label Name="Message" Content="Komunikat: " HorizontalAlignment="Left" Margin="73,209,0,0" VerticalAlignment="Top" Width="264" Visibility="Hidden"/>
     </Grid>
 </Page>
