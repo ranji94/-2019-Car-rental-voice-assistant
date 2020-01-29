@@ -23,6 +23,7 @@ namespace CarRentalVoiceAssistant
         public Summary()
         {
             InitializeComponent();
+            Assistant.LoadSummaryRecognition();
             Reservation reservation = Reservation.Instance;
             Make.Content = reservation.Make;
             Model.Content = reservation.Model;

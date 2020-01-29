@@ -9,13 +9,13 @@
       Title="RentDates" Width="397.6" Height="322.4">
 
     <Grid Width="397.6" Height="322.4">
-        <DatePicker Name="FromDate" HorizontalAlignment="Left" Margin="85,80,0,0" VerticalAlignment="Top" Width="218" DisplayDateStart="2020-01-25" SelectedDateChanged="FromDate_SelectedDateChanged"/>
+        <DatePicker Name="FromDate" HorizontalAlignment="Left" Margin="85,80,0,0" VerticalAlignment="Top" Width="218" DisplayDateStart="2020-01-01" SelectedDateChanged="FromDate_SelectedDateChanged"/>
         <DatePicker Name="ToDate" HorizontalAlignment="Left" Margin="85,143,0,0" VerticalAlignment="Top" Width="218" DisplayDateStart="2020-01-25" SelectedDateChanged="ToDate_SelectedDateChanged"/>
         <Label Content="Wynajem" HorizontalAlignment="Left" Margin="147,29,0,0" VerticalAlignment="Top" Width="65"/>
         <Label Content="Od&#xD;&#xA;" HorizontalAlignment="Left" Margin="45,80,0,0" VerticalAlignment="Top" Width="35" Height="23"/>
         <Label Content="Do&#xD;&#xA;&#xA;" HorizontalAlignment="Left" Margin="45,142,0,0" VerticalAlignment="Top" Width="35" Height="23"/>
-        <Button Name="Next" IsEnabled="False" Content="Dalej&#xD;&#xA;" HorizontalAlignment="Left" Margin="253,260,0,0" VerticalAlignment="Top" Width="75" Height="19" Click="Next_Click"/>
-        <Button Name="Back" Content="Wstecz&#xA;" HorizontalAlignment="Left" Margin="80,260,0,0" VerticalAlignment="Top" Width="75" Height="19" Click="Back_Click"/>
+        <Button Name="Next" IsEnabled="False" Content="Dalej&#xD;&#xA;" HorizontalAlignment="Left" Margin="137,256,0,0" VerticalAlignment="Top" Width="75" Height="19" Click="Next_Click"/>
+        <Label Name="Message" Content="Komunikat" HorizontalAlignment="Left" Margin="45,204,0,0" VerticalAlignment="Top" Width="258" Visibility="Hidden"/>
 
     </Grid>
 </Page>

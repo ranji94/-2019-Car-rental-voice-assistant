@@ -169,5 +169,12 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="resdata\surnames.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="resdata\names.txt" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

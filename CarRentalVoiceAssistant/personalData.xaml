@@ -13,8 +13,8 @@
         <TextBox Name="PersonalSurname" HorizontalAlignment="Left" Height="23" Margin="105,141,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="195" TextChanged="PersonalSurname_TextChanged"/>
         <Label Content="Imię" HorizontalAlignment="Left" Margin="105,50,0,0" VerticalAlignment="Top" Width="195"/>
         <Label Content="Nazwisko" HorizontalAlignment="Left" Margin="105,110,0,0" VerticalAlignment="Top" Width="195"/>
-        <Button Name="Back" Content="Wstecz" HorizontalAlignment="Left" Margin="80,260,0,0" VerticalAlignment="Top" Width="75" Click="Back_Click"/>
-        <Button Name="Next" IsEnabled="False" Content="Dalej" HorizontalAlignment="Left" Margin="262,260,0,0" VerticalAlignment="Top" Width="75" Click="Next_Click"/>
+        <Button Name="Next" IsEnabled="False" Content="Dalej" HorizontalAlignment="Left" Margin="155,244,0,0" VerticalAlignment="Top" Width="75" Click="Next_Click"/>
+        <Label Name="Message" Content="Komunikat" HorizontalAlignment="Left" Margin="155,197,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
 
     </Grid>
 </Page>
