@@ -23,6 +23,7 @@ namespace CarRentalVoiceAssistant
         public PersonalData()
         {
             InitializeComponent();
+            Assistant.LoadPersonalDataRecognition();
         }
 
         private void Back_Click(object sender, RoutedEventArgs e)

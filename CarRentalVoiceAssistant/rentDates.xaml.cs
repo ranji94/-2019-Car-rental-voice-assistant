@@ -24,12 +24,10 @@ namespace CarRentalVoiceAssistant
         public RentDates()
         {
             InitializeComponent();
+            this.FromDate.SelectedDate = DateTime.Now;
+            Reservation reservation = Reservation.Instance;
+            reservation.FromDate =  this.FromDate.Text;
             Assistant.LoadRentDatesRecognition();
-        }
-
-        private void Back_Click(object sender, RoutedEventArgs e)
-        {
-            this.NavigationService.GoBack();
         }
 
         private void ToDate_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
