@@ -12,6 +12,7 @@
         <Label Content="Pojazd zarezerwowano pomyślnie" HorizontalAlignment="Left" Margin="68,127,0,0" VerticalAlignment="Top" Width="293" Height="51" FontSize="18"/>
         <Button Name="Retry" Content="Kolejne zamówienie" HorizontalAlignment="Left" Margin="80,260,0,0" VerticalAlignment="Top" Width="112" Click="RetryButton_Click"/>
         <Button Name="Exit" Content="Zakończ" HorizontalAlignment="Left" Margin="229,260,0,0" VerticalAlignment="Top" Width="112" Click="ExitButton_Click"/>
+        <Label Name="Message" Content="Komunikat" HorizontalAlignment="Left" Margin="164,43,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
 
     </Grid>
 </Page>

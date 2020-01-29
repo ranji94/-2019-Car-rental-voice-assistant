@@ -23,6 +23,7 @@ namespace CarRentalVoiceAssistant
         public Finish()
         {
             InitializeComponent();
+            Assistant.LoadFinishRecognition();
         }
 
         private void RetryButton_Click(object sender, RoutedEventArgs e)

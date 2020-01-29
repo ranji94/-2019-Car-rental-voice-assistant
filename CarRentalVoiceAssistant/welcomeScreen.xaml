@@ -11,5 +11,6 @@
     <Grid Width="397.6" Height="322.4">
         <Label Content="Witaj w asystencie&#xD;&#xA;wynajmu pojazdów" HorizontalAlignment="Left" Margin="116,121,0,144.4" Width="177" FontSize="16"/>
         <Button Content="Wypożycz pojazd&#xD;&#xA;" HorizontalAlignment="Left" Margin="148,260,0,0" VerticalAlignment="Top" Width="111" Click="Button_Click" Height="24"/>
+        <Label Name="Message" Content="Komunikat: " HorizontalAlignment="Left" Margin="162,49,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
     </Grid>
 </Page>
